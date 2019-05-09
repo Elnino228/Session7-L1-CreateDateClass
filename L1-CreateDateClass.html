@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let MyDate=function (day,month,year) {
+        this.day=day;
+        this.month=month;
+        this.year=year;
+        this.getDay=function () {
+            return day;
+        };
+        this.getMonth=function () {
+            return month;
+        };
+        this.getYear=function () {
+            return year;
+        };
+        this.setDay=function (day) {
+            this.day=day;
+        };
+        this.setMonth=function (month) {
+            this.month=month;
+        };
+        this.setYear=function (year) {
+            this.year=year;
+        };
+        this.setDate=function (day,month,year) {
+            this.day=day;
+            this.month=month;
+            this.year=year;
+        };
+        this.toString=function () {
+            let date;
+            if (this.day<10) {
+                if (this.month<10) {
+                    date='0'+this.day+'/'+'0'+this.month+'/'+this.year;
+                } else {
+                    date='0'+this.day+'/'+this.month+'/'+this.year;
+                }
+            } else {
+                date=this.day+'/'+this.month+'/'+this.year;
+            }
+
+            return date;
+        };
+
+    };
+    let date= new MyDate(19,15,2019);
+    date.setMonth(10);
+    date.setDay(10);
+    date.setYear(2020);
+    alert(date.toString());
+    date.setDate(20,9,1995);
+    alert(date.toString());
+</script>
+</body>
+</html>
